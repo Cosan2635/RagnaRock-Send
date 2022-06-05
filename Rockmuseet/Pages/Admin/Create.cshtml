@@ -1,0 +1,50 @@
+﻿@page
+@model Rockmuseet.Pages.Admin.CreateModel
+@{
+}
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Admin</h1>
+            <p class="lead text-muted">Opret en/flere historier/sange. </p>
+                
+        </div>
+    </div>
+</section>
+<section>
+    <div class="album py-5 bg-light">
+        <div class="container">
+        </div>
+        <div class="row g-5 justify-content-center">
+            <div class="col-md-7 col-lg-8">
+                <form class="needs-validation" method="post">
+                    <div class="row g-3">
+                        <div class="col-sm-12">
+                            <label class="form-label">Name</label>
+                            <input asp-for="@Model.History.Name" class="form-control">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Description</label>
+                            <textarea asp-for="@Model.History.Description" type="email" class="form-control" id="description"></textarea>
+                            <span asp-validation-for="@Model.History.Description" class="text-danger"></span>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Image</label>
+                            <input asp-for="@Model.History.Image" class="form-control">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">History Audio</label>
+                            <input asp-for="@Model.History.HistoryAudio" class="form-control">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Music Audio</label>
+                            <input asp-for="@Model.History.MusicAudio" class="form-control">
+                        </div>
+                    </div>
+                    <button class="w-100 btn btn-primary btn-lg mt-5" type="submit">Create a new history</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

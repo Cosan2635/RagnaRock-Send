@@ -1,0 +1,68 @@
+﻿
+@page
+@model Rockmuseet.HistoriesModel
+@{
+    ViewData["Title"] = "Histories";
+}
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Admin</h1>
+            <p class="lead text-muted">Mulighed for at oprette, slette & opdatere forskellige historier .</p>
+            <p>
+                <a asp-page="create" class="btn btn-primary my-2">Opret en historie</a>
+            </p>
+        </div>
+    </div>
+</section>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row g-3 justify-content-center px-10">
+            <table class="table border bg-white w-100">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">History Audio</th>
+                        <th scope="col">Music Audio</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Histories.Count != 0)
+                    {
+                        foreach (var item in Model.Histories)
+                        {
+                    <tr>
+                        <th scope="row">@item.Value.Id</th>
+                        <td><img src="~/media/images/@item.Value.Image" height="50" /></td>
+                        <td class="block">@item.Value.Name</td>
+                        <td class="w-25">@item.Value.Description</td>
+                        <td>@item.Value.HistoryAudio</td>
+                        <td>@item.Value.MusicAudio</td>
+                        <td>
+                            <a asp-page="update" asp-route-id="@item.Key" class="btn btn-sm btn-success">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
+                                </svg>
+                            </a>
+                            <a asp-page="delete" asp-route-id="@item.Key" class="btn btn-sm btn-danger">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"></path>
+                                </svg>
+                                <div class="ripple-container"></div>
+                            </a>
+                        </td>
+                    </tr>
+
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

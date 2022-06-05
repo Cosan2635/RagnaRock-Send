@@ -1,0 +1,88 @@
+﻿
+@page
+@model Rockmuseet.HistoriesModel
+@{
+    ViewData["Title"] = "Histories";
+}
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Historier/Sange</h1>
+            <p class="lead text-muted">Her er det muligt at lytte til enten de forskellige historier, eller sange efter tidsperiode.</p>
+            @*<p>
+                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                </p>*@
+        </div>
+    </div>
+</section>
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @if (Model.Histories.Count != 0)
+            {
+                foreach (var item in Model.Histories)
+                {
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img class="bd-placeholder-img card-img-top" width="100" height="225" src="~/media/images/@item.Value.Image" />
+                            <div class="card-body">
+                                <p class="card-text">@item.Value.Description</p>
+                                <div class="mb-3 w-full">
+                                    <audio id="@item.Value.MusicAudioId" controls style="display: none;">
+                                        <source src="/media/audio/music/@item.Value.MusicAudio" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <audio id="@item.Value.HistoryAudioId" controls style="display: none;">
+                                        <source src="/media/audio/music/@item.Value.HistoryAudio" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="play(@item.Value.HistoryAudioId)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                                            </svg> History
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="pause(@item.Value.HistoryAudioId)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16">
+                                                <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z" />
+                                            </svg> History
+                                        </button>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="play(@item.Value.MusicAudioId)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                                            </svg> Music
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="pause(@item.Value.MusicAudioId)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16">
+                                                <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z" />
+                                            </svg> Music
+                                        </button>
+                                    </div>
+                                    @*<small class="text-muted">9 mins</small>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    function play(id) {
+        var element = document.getElementById(`${id}`);
+        element.play()
+    }
+    function pause(id) {
+        var element = document.getElementById(`${id}`);
+        element.pause()
+    }
+</script>

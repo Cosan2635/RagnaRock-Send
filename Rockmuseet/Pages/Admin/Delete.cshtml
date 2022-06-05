@@ -1,0 +1,17 @@
+﻿@page "{id}"
+@model Rockmuseet.Pages.Admin.DeleteModel
+@{
+}
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Delete Confirmation</h1>
+            <p class="lead text-muted">Are you sure you want to delete this @Model.History.Name</p>
+            <form method="post">
+                <input type="submit" value="Yes" class="btn btn-success" />
+                <a class="btn btn-danger" asp-page="/Admin/Index">No</a>
+            </form>
+        </div>
+    </div>
+</section>

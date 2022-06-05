@@ -1,0 +1,82 @@
+{
+  "70": {
+    "Id": 70,
+    "Name": "En Lille Pige",
+    "Description": "En lille pige i flade sko Knud Pheiffer med Hans Peder Åse's trio - Lavet i 1950'erne. - 1950 - pop musik.",
+    "Image": "download.jpg",
+    "HistoryAudioId": 6186,
+    "HistoryAudio": null,
+    "MusicAudioId": 2702,
+    "MusicAudio": "En lille pige.mp3"
+  },
+  "59": {
+    "Id": 59,
+    "Name": "The Beatles",
+    "Description": "The Beatles var en engelsk rock band, som primært var kendt for deres musik i 1960'erne. ",
+    "Image": "download1.jpg",
+    "HistoryAudioId": 3801,
+    "HistoryAudio": null,
+    "MusicAudioId": 3658,
+    "MusicAudio": "The Beatles.mp3"
+  },
+  "23": {
+    "Id": 23,
+    "Name": "CV Jørgensen - Entertaineren",
+    "Description": "Entertaineren er en sang skrevet af C.V. Jørgensen. Sangen udkom på albummet Storbyens små oaser fra 1977.",
+    "Image": "C.jpg",
+    "HistoryAudioId": 859,
+    "HistoryAudio": null,
+    "MusicAudioId": 8094,
+    "MusicAudio": "CV Jørgensen Entertaineren.mp3"
+  },
+  "7": {
+    "Id": 7,
+    "Name": "80'ernes Boheme - Sebastian",
+    "Description": "80'ernes Boheme er Sebastians 13. studiealbum, udgivet i 1983. Det er det sidste indspillet med \"stjernebandet.",
+    "Image": "x1080.jpg",
+    "HistoryAudioId": 9940,
+    "HistoryAudio": null,
+    "MusicAudioId": 9267,
+    "MusicAudio": "80'ernes Boheme.mp3"
+  },
+  "57": {
+    "Id": 57,
+    "Name": "Biggie",
+    "Description": "Hiphop genren kom til Danmark i 1990'erne fra USA. Det var ikke en hobby, men tværtimod så var det en livstil.  ",
+    "Image": "biggg.jpg",
+    "HistoryAudioId": 9769,
+    "HistoryAudio": null,
+    "MusicAudioId": 641,
+    "MusicAudio": "Biggie.mp3"
+  },
+  "20": {
+    "Id": 20,
+    "Name": "L.O.C",
+    "Description": "L.O.C. er en dansk rapper, som debuterede med sit album i starten af 2000.",
+    "Image": "Locc.jpg",
+    "HistoryAudioId": 2571,
+    "HistoryAudio": null,
+    "MusicAudioId": 7935,
+    "MusicAudio": "Locccc.mp3"
+  },
+  "38": {
+    "Id": 38,
+    "Name": "Mø",
+    "Description": "MØ anden singleudgivelse – den første var “Maiden” – blev hendes første hit i Danmark og dermed startskuddet til en karriere, der gjorde hende til et af 2010’ernes tre største internationale danske navne.",
+    "Image": "Moe.jpg",
+    "HistoryAudioId": 5847,
+    "HistoryAudio": null,
+    "MusicAudioId": 9671,
+    "MusicAudio": "MØ - Pilgrim.mp3"
+  },
+  "21": {
+    "Id": 21,
+    "Name": "Tessa",
+    "Description": "\"Tessa hun er ben og hun ser varm ud\" - Wame (som ser op til Tessa)",
+    "Image": "Tessa.jpg",
+    "HistoryAudioId": 9842,
+    "HistoryAudio": null,
+    "MusicAudioId": 9492,
+    "MusicAudio": "Tessaa.mp3"
+  }
+}
